@@ -23,9 +23,6 @@ if SHIELD_LILY60_LEFT || SHIELD_LILY60_RIGHT
 config ZMK_SPLIT
     default y
 
-config ZMK_SPLIT_BLE
-    default y
-
 if ZMK_DISPLAY
 
 config I2C
