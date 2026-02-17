@@ -11,9 +11,19 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
+if SHIELD_LILY60_RIGHT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+endif
+
 if SHIELD_LILY60_LEFT || SHIELD_LILY60_RIGHT
 
 config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_BLE
     default y
 
 if ZMK_DISPLAY
