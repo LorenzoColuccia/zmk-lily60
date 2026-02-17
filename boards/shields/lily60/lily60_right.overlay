@@ -9,23 +9,28 @@
     col-offset = <7>;
 };
 
+/*
+ * Pin label on nice!nano -> actual nRF52840 GPIO
+ * Same pin mapping as left half (symmetric wiring)
+ */
+
 &kscan0 {
     row-gpios
-        = <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r0 - board pin 9
+        , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r1 - board pin 5
+        , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r2 - board pin 6
+        , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r3 - board pin 7
+        , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r4 - board pin 8
         ;
-    
+
     col-gpios
-        = <&pro_micro 10 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 20 GPIO_ACTIVE_HIGH>
+        = <&gpio0 9  GPIO_ACTIVE_HIGH>  // c1 - board pin 10
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>  // c2 - board pin 16
+        , <&gpio0 23 GPIO_ACTIVE_HIGH>  // c3 - board pin 14
+        , <&gpio0 21 GPIO_ACTIVE_HIGH>  // c4 - board pin 15
+        , <&gpio0 28 GPIO_ACTIVE_HIGH>  // c5 - board pin 18
+        , <&gpio0 2  GPIO_ACTIVE_HIGH>  // c6 - board pin 19
+        , <&gpio0 29 GPIO_ACTIVE_HIGH>  // c7 - board pin 20
         ;
 };
 

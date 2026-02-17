@@ -1,4 +1,3 @@
-name: zmk-keyboards-pueo
 build:
   settings:
-     board_root: .
+    board_root: .
