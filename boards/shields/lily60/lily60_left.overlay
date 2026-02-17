@@ -23,6 +23,10 @@
  * c5 = board pin 18 -> P0.28 -> &gpio0 28
  * c6 = board pin 19 -> P0.02 -> &gpio0 2
  * c7 = board pin 20 -> P0.29 -> &gpio0 29
+ *
+ * I2C for OLED:
+ * SDA = board pin 2 -> P0.17
+ * SCL = board pin 3 -> P0.20
  */
 
 &kscan0 {
@@ -43,4 +47,23 @@
         , <&gpio0 2  GPIO_ACTIVE_HIGH>  // c6 - board pin 19
         , <&gpio0 29 GPIO_ACTIVE_HIGH>  // c7 - board pin 20
         ;
+};
+
+&pro_micro_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
+    };
 };
