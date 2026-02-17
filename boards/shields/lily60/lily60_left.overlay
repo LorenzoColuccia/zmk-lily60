@@ -5,22 +5,42 @@
 
 #include "lily60.dtsi"
 
+/*
+ * Pin label on nice!nano -> actual nRF52840 GPIO
+ *
+ * ROWS:
+ * r0 = board pin 9  -> P1.06 -> &gpio1 6
+ * r1 = board pin 5  -> P0.24 -> &gpio0 24
+ * r2 = board pin 6  -> P1.00 -> &gpio1 0
+ * r3 = board pin 7  -> P0.11 -> &gpio0 11
+ * r4 = board pin 8  -> P1.04 -> &gpio1 4
+ *
+ * COLS:
+ * c1 = board pin 10 -> P0.09 -> &gpio0 9
+ * c2 = board pin 16 -> P0.10 -> &gpio0 10
+ * c3 = board pin 14 -> P0.23 -> &gpio0 23
+ * c4 = board pin 15 -> P0.21 -> &gpio0 21
+ * c5 = board pin 18 -> P0.28 -> &gpio0 28
+ * c6 = board pin 19 -> P0.02 -> &gpio0 2
+ * c7 = board pin 20 -> P0.29 -> &gpio0 29
+ */
+
 &kscan0 {
     row-gpios
-        = <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpio0 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpio0 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-        , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        = <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r0 - board pin 9
+        , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r1 - board pin 5
+        , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r2 - board pin 6
+        , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r3 - board pin 7
+        , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // r4 - board pin 8
         ;
-    
+
     col-gpios
-        = <&gpio0 10 GPIO_ACTIVE_HIGH>
-        , <&gpio0 16 GPIO_ACTIVE_HIGH>
-        , <&gpio0 14 GPIO_ACTIVE_HIGH>
-        , <&gpio0 15 GPIO_ACTIVE_HIGH>
-        , <&gpio0 18 GPIO_ACTIVE_HIGH>
-        , <&gpio0 19 GPIO_ACTIVE_HIGH>
-        , <&gpio0 20 GPIO_ACTIVE_HIGH>
+        = <&gpio0 9  GPIO_ACTIVE_HIGH>  // c1 - board pin 10
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>  // c2 - board pin 16
+        , <&gpio0 23 GPIO_ACTIVE_HIGH>  // c3 - board pin 14
+        , <&gpio0 21 GPIO_ACTIVE_HIGH>  // c4 - board pin 15
+        , <&gpio0 28 GPIO_ACTIVE_HIGH>  // c5 - board pin 18
+        , <&gpio0 2  GPIO_ACTIVE_HIGH>  // c6 - board pin 19
+        , <&gpio0 29 GPIO_ACTIVE_HIGH>  // c7 - board pin 20
         ;
 };
