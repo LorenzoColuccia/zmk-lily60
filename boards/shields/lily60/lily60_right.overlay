@@ -5,6 +5,12 @@
 
 #include "lily60.dtsi"
 
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
+
 &default_transform {
     col-offset = <7>;
 };
