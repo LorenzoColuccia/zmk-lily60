@@ -7,10 +7,10 @@ manifest:
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
+      - name: zmk
+        remote: zmkfirmware
+        revision: 46e02e3  # last LVGL 8 commit
+        import: app/west.yml
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
