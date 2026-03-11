@@ -1,16 +1,18 @@
 manifest:
   defaults:
-    revision: v0.3
+    revision: main
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
   projects:
-      - name: zmk
-        remote: zmkfirmware
-        revision: 46e02e3  # last LVGL 8 commit
-        import: app/west.yml
+    - name: zmk
+      remote: zmkfirmware
+      revision: 46e02e3
+      import: app/west.yml
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
+  self:
+    path: config
