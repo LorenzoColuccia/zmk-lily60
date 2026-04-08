@@ -10,15 +10,6 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-		
-		
-	behaviors {
-		bs_del: backspace_delete {
-			compatible = "zmk,behavior-mod-morph";
-			bindings = <&kp BSPC>, <&kp DEL>;
-			mods = <(MOD_LSFT|MOD_RSFT)>;
-		};
-	};
 
         default_layer {
             bindings = <
